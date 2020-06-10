@@ -1,1 +1,7 @@
-console.log('hello')
+if (true) {
+    if (false) {
+        if (bo) {
+
+        }
+    }
+}
