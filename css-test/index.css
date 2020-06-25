@@ -1,0 +1,22 @@
+.box1 {
+    border: solid 5px black;
+    height: 200px;
+    width: 200px;
+    margin: 70px;
+    padding: 10px;
+}
+
+
+.box2 {
+    border: solid 5px black;
+    height: 200px;
+    width: 200px;
+    margin: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}

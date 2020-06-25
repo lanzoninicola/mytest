@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="getInfo()">Get Box Info</button>
+
+    <div id="box1" class="box1">
+        <p> <strong>Box</strong></p>
+        <p>HEIGHT FROM CSS</p>
+        <p id="dimensionBox1"></p>
+        <hr>
+        <p>HEIGHT AND WIDTH WITH MARGIN AND PADDING</p>
+        <p id="dimensionWithMarginAndPaddingBox1"></p>
+    </div>
+    <div id="box2" class="box2">
+        <p><strong>Box with "box-sizing: border-box"</strong></p>
+        <p>HEIGHT FROM CSS</p>
+        <p id="dimensionBox2"></p>
+        <hr>
+        <p>HEIGHT AND WIDTH WITH MARGIN AND PADDING</p>
+        <p id="dimensionWithMarginAndPaddingBox2"></p>
+    </div>
+
+</body>
+<script>
+
+
+
+    function getHeightFromCSS(element) {
+        let style = window.getComputedStyle(document.getElementById("box1"), null);
+        let height = style.getPropertyValue("height");
+        let txt = "Height: " + height;
+        return txt;
+    }
+
+    function getHeightAndWidth(element) {
+        console.log(element)
+        let txt = "Height: " + element.offsetHeight + "px<br>";
+        txt += "Width: " + element.offsetWidth + "px";
+        return txt
+    }
+
+    function getBox1Dimensions() {
+        var elmnt = document.getElementById("box1");
+        let txt = getHeightAndWidth(elmnt);
+        let txt2 = getHeightFromCSS(elmnt);
+        document.getElementById("dimensionWithMarginAndPaddingBox1").innerHTML = txt;
+        document.getElementById("dimensionBox1").innerHTML = txt2;
+    }
+
+    function getBox2Dimensions() {
+        var elmnt = document.getElementById("box2");
+        let txt = getHeightAndWidth(elmnt)
+        let txt2 = getHeightFromCSS(elmnt);
+        document.getElementById("dimensionWithMarginAndPaddingBox2").innerHTML = txt;
+        document.getElementById("dimensionBox2").innerHTML = txt2;
+    }
+
+    function getInfo() {
+        getBox1Dimensions();
+        getBox2Dimensions();
+    }
+</script>
+
+</html>
