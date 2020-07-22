@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div stule="margin: 20px;">
+        <p>Write something</p>
+        <input type="text" name="text" id="inputText">
+    </div>
+    <script>
+
+        let inputText = document.getElementById("inputText");
+
+        inputText.addEventListener('input', (e) => {
+            let targetValue = "iterate quickly"
+
+            if (e.target.value === targetValue) {
+                clear(inputText)
+            }
+        })
+
+        function clear(inputElement) {
+            inputElement.value = ""
+        }
+
+    </script>
+</body>
+
+</html>
